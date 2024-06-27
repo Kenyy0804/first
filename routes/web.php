@@ -26,3 +26,19 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::prefix('manager')
+->middleware('can:manager-haigher')
+->group(function() {
+    Route::get('index', function () {
+       dd('manager');
+    });
+});
+
+Route::middleware('can:user-higher')->group(function() {
+    Route::get('index', function () {
+        dd('user');
+    });
+});
+
+

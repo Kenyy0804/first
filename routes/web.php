@@ -29,7 +29,7 @@ Route::middleware([
 });
 
 Route::prefix('manager')
-->middleware('can:manager-haigher')
+->middleware('can:manager-higher')
 ->group(function() {
     Route::resource('events', EventController::class);    
 });

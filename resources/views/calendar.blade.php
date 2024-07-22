@@ -1,7 +1,7 @@
 <x-calendar-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            イベントカレンダー
+            <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">イベントカレンダー</a>
         </h2>
     </x-slot>
 

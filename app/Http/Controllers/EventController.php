@@ -30,7 +30,7 @@ class EventController extends Controller
         ->leftjoinSub($reservedPeople, 'reservedPeople',function($join){
             $join->on('events.id', '=', 'reservedPeople.event_id');
         })
-        ->whereDate('events.start_date', '<', $today)
+        ->whereDate('events.start_date', '>=', $today)
         ->orderBy('events.start_date', 'asc')
         ->paginate(10);
 
